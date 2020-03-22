@@ -1,0 +1,4 @@
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/rebuild_cache.dir
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/edit_cache.dir
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/Token.dir
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/MathEval.dir

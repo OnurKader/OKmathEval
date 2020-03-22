@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/Token.cpp
+Token.hpp
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/Token.hpp
+
+/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/Token.hpp
+cstring
+-
+string
+-
+string_view
+-
+
