@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/test.cpp" "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/MathEval.dir/test.cpp.o"
+  "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/Lexer.cpp" "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/Lexer.dir/Lexer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,8 +14,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/Token.dir/DependInfo.cmake"
-  "/home/beronthecolossus/Peki/C++/Projects/OK/MathEval/CMakeFiles/Lexer.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

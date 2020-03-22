@@ -4,7 +4,6 @@
 
 int main()
 {
-	OK::Token tok("1+2 * 3");
 	char* input_buffer = nullptr;
 	ssize_t read_count = 0LL;
 	size_t len = 0ULL;
@@ -13,8 +12,8 @@ int main()
 	{
 		// Get rid of the newline at the end of stdin input
 		input_buffer[--read_count] = '\0';
-		std::string_view input(input_buffer);
-		std::cout << input << std::endl;
+		OK::Token tok(input_buffer);
+		std::cout << tok.view() << std::endl;
 	}
 
 	free(input_buffer);

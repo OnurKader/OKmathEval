@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/beronthecolossus/Peki/C++/Projects/OK/MathEval
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named MathEval
+
+# Build rule for target.
+MathEval: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MathEval
+.PHONY : MathEval
+
+# fast build rule for target.
+MathEval/fast:
+	$(MAKE) -f CMakeFiles/MathEval.dir/build.make CMakeFiles/MathEval.dir/build
+.PHONY : MathEval/fast
+
+#=============================================================================
 # Target rules for targets named Token
 
 # Build rule for target.
@@ -124,17 +137,44 @@ Token/fast:
 .PHONY : Token/fast
 
 #=============================================================================
-# Target rules for targets named MathEval
+# Target rules for targets named Lexer
 
 # Build rule for target.
-MathEval: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MathEval
-.PHONY : MathEval
+Lexer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Lexer
+.PHONY : Lexer
 
 # fast build rule for target.
-MathEval/fast:
-	$(MAKE) -f CMakeFiles/MathEval.dir/build.make CMakeFiles/MathEval.dir/build
-.PHONY : MathEval/fast
+Lexer/fast:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/build
+.PHONY : Lexer/fast
+
+Lexer.o: Lexer.cpp.o
+
+.PHONY : Lexer.o
+
+# target to build an object file
+Lexer.cpp.o:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Lexer.cpp.o
+.PHONY : Lexer.cpp.o
+
+Lexer.i: Lexer.cpp.i
+
+.PHONY : Lexer.i
+
+# target to preprocess a source file
+Lexer.cpp.i:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Lexer.cpp.i
+.PHONY : Lexer.cpp.i
+
+Lexer.s: Lexer.cpp.s
+
+.PHONY : Lexer.s
+
+# target to generate assembly for a file
+Lexer.cpp.s:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Lexer.cpp.s
+.PHONY : Lexer.cpp.s
 
 Token.o: Token.cpp.o
 
@@ -196,10 +236,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Token"
 	@echo "... MathEval"
+	@echo "... Token"
+	@echo "... rebuild_cache"
+	@echo "... Lexer"
+	@echo "... Lexer.o"
+	@echo "... Lexer.i"
+	@echo "... Lexer.s"
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
