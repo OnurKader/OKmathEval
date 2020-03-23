@@ -42,6 +42,9 @@ Token Lexer::nextToken()
 		case '-': return Token(TokenType::Subtraction, m_index++, "-", nullptr);
 		case '*': return Token(TokenType::Multiplication, m_index++, "*", nullptr);
 		case '/': return Token(TokenType::Division, m_index++, "/", nullptr);
+		case '(': return Token(TokenType::LeftParens, m_index++, "(", nullptr);
+		case ')': return Token(TokenType::RightParens, m_index++, ")", nullptr);
+		default:  return Token(TokenType::Bad, m_index++, m_str.substr(m_index-1, 1), nullptr);
 	}
 }
 

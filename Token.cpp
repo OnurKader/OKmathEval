@@ -8,7 +8,13 @@ Token::Token(TokenType type, size_t pos, const char* str, primitive_t value) :
 }
 
 template<typename T>
-T Token::as()
+T& Token::as()
+{
+	return std::get<T>(m_value);
+}
+
+template<typename T>
+const T& Token::as() const
 {
 	return std::get<T>(m_value);
 }

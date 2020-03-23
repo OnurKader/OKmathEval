@@ -48,7 +48,10 @@ class Token
 	size_t startPos() const { return m_start_pos; }
 
 	template<typename T>
-	T as();
+	T& as();
+
+	template<typename T>
+	const T& as() const;
 
 	private:
 	TokenType m_type;
