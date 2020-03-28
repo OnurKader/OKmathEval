@@ -38,29 +38,10 @@ enum class TokenType : uint8_t
 };
 
 static constexpr const char* TokenTypeStrings[] = {
-	"Whitespace",
-	"Number",
-	"Addition",
-	"Subtraction",
-	"Multiplication",
-	"Division",
-	"Modulus",
-	"BitwiseAND",
-	"BitwiseOR",
-	"BitwiseXOR",
-	"BitwiseNOT",
-	"LogicalAND",
-	"LogicalOR",
-	"LogicalXOR",
-	"LogicalNOT",
-	"LeftParens",
-	"RightParens",
-	"UnaryExpr",
-	"BinaryExpr",
-	"ParensExpr",
-	"EndOfFile",
-	"Bad"
-};
+	"Whitespace", "Number",		"Addition",	  "Subtraction", "Multiplication", "Division",
+	"Modulus",	  "BitwiseAND", "BitwiseOR",  "BitwiseXOR",	 "BitwiseNOT",	   "LogicalAND",
+	"LogicalOR",  "LogicalXOR", "LogicalNOT", "LeftParens",	 "RightParens",	   "UnaryExpr",
+	"BinaryExpr", "ParensExpr", "EndOfFile",  "Bad"};
 
 class Token
 {
@@ -91,6 +72,9 @@ class Token
 	const std::string_view& view() const { return m_str; }
 	TokenType type() const { return m_type; }
 	size_t startPos() const { return m_start_pos; }
+
+	primitive_t& value() { return m_value; }
+	const primitive_t& value() const { return m_value; }
 
 	template<typename T>
 	T& as()

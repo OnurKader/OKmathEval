@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/beronthecolossus/Peki/C++/Projects/OK/MathEval
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MathEval
+# Target rules for targets named Lexer
 
 # Build rule for target.
-MathEval: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MathEval
-.PHONY : MathEval
+Lexer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Lexer
+.PHONY : Lexer
 
 # fast build rule for target.
-MathEval/fast:
-	$(MAKE) -f CMakeFiles/MathEval.dir/build.make CMakeFiles/MathEval.dir/build
-.PHONY : MathEval/fast
+Lexer/fast:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/build
+.PHONY : Lexer/fast
 
 #=============================================================================
 # Target rules for targets named Token
@@ -137,17 +137,30 @@ Token/fast:
 .PHONY : Token/fast
 
 #=============================================================================
-# Target rules for targets named Lexer
+# Target rules for targets named MathEval
 
 # Build rule for target.
-Lexer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Lexer
-.PHONY : Lexer
+MathEval: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MathEval
+.PHONY : MathEval
 
 # fast build rule for target.
-Lexer/fast:
-	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/build
-.PHONY : Lexer/fast
+MathEval/fast:
+	$(MAKE) -f CMakeFiles/MathEval.dir/build.make CMakeFiles/MathEval.dir/build
+.PHONY : MathEval/fast
+
+#=============================================================================
+# Target rules for targets named Parser
+
+# Build rule for target.
+Parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Parser
+.PHONY : Parser
+
+# fast build rule for target.
+Parser/fast:
+	$(MAKE) -f CMakeFiles/Parser.dir/build.make CMakeFiles/Parser.dir/build
+.PHONY : Parser/fast
 
 Lexer.o: Lexer.cpp.o
 
@@ -175,6 +188,33 @@ Lexer.s: Lexer.cpp.s
 Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
+
+Parser.o: Parser.cpp.o
+
+.PHONY : Parser.o
+
+# target to build an object file
+Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/Parser.dir/build.make CMakeFiles/Parser.dir/Parser.cpp.o
+.PHONY : Parser.cpp.o
+
+Parser.i: Parser.cpp.i
+
+.PHONY : Parser.i
+
+# target to preprocess a source file
+Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/Parser.dir/build.make CMakeFiles/Parser.dir/Parser.cpp.i
+.PHONY : Parser.cpp.i
+
+Parser.s: Parser.cpp.s
+
+.PHONY : Parser.s
+
+# target to generate assembly for a file
+Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/Parser.dir/build.make CMakeFiles/Parser.dir/Parser.cpp.s
+.PHONY : Parser.cpp.s
 
 Token.o: Token.cpp.o
 
@@ -236,14 +276,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... MathEval"
-	@echo "... Token"
 	@echo "... rebuild_cache"
 	@echo "... Lexer"
+	@echo "... Token"
+	@echo "... MathEval"
+	@echo "... edit_cache"
+	@echo "... Parser"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... Parser.o"
+	@echo "... Parser.i"
+	@echo "... Parser.s"
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
