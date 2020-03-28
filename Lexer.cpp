@@ -8,6 +8,7 @@ Token Lexer::nextToken()
 {
 	if(m_index >= m_str.length())
 		return Token(TokenType::EndOfFile, m_index, "\0", 0UL);
+
 	// Integer check
 	if(std::isdigit(current()))
 	{
@@ -17,7 +18,7 @@ Token Lexer::nextToken()
 			moveForward();
 
 		size_t length = m_index - start;
-		char* token_buffer = nullptr;
+		char* token_buffer = new char[length];
 		m_str.copy(token_buffer, length, start);
 		int64_t value = std::atoll(token_buffer);
 		return Token(TokenType::Number, start, token_buffer, value);
@@ -31,7 +32,7 @@ Token Lexer::nextToken()
 			moveForward();
 
 		size_t length = m_index - start;
-		char* token_buffer = nullptr;
+		char* token_buffer = new char[length];
 		m_str.copy(token_buffer, length, start);
 		return Token(TokenType::Whitespace, start, token_buffer, nullptr);
 	}

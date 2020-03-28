@@ -12,8 +12,17 @@ int main()
 	{
 		// Get rid of the newline at the end of stdin input
 		input_buffer[--read_count] = '\0';
-		OK::Lexer tok(input_buffer);
-		std::cout << tok.view() << std::endl;
+		OK::Lexer lexer(input_buffer);
+		while(true)
+		{
+			OK::Token tok = lexer.nextToken();
+			if(tok.type() == OK::TokenType::EndOfFile)
+				break;
+
+			std::cout << OK::TokenTypeStrings[static_cast<int8_t>(tok.type())] << ": " << tok.view()
+					  << std::endl;
+		}
+		std::cout << "------------------------------------------" << std::endl;
 	}
 
 	free(input_buffer);

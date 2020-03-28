@@ -37,10 +37,56 @@ enum class TokenType : uint8_t
 	Bad
 };
 
+static constexpr const char* TokenTypeStrings[] = {
+	"Whitespace",
+	"Number",
+	"Addition",
+	"Subtraction",
+	"Multiplication",
+	"Division",
+	"Modulus",
+	"BitwiseAND",
+	"BitwiseOR",
+	"BitwiseXOR",
+	"BitwiseNOT",
+	"LogicalAND",
+	"LogicalOR",
+	"LogicalXOR",
+	"LogicalNOT",
+	"LeftParens",
+	"RightParens",
+	"UnaryExpr",
+	"BinaryExpr",
+	"ParensExpr",
+	"EndOfFile",
+	"Bad"
+};
+
 class Token
 {
 	public:
-	Token(TokenType, size_t, const char*, primitive_t);
+	Token(TokenType type, size_t pos, const char* str, primitive_t value) :
+		m_type(type), m_start_pos(pos), m_str(str), m_value(value)
+	{
+	}
+
+	Token(const Token& other) :
+		m_type(other.m_type),
+		m_start_pos(other.m_start_pos),
+		m_str(other.m_str),
+		m_value(other.m_value)
+	{
+	}
+
+	Token& operator=(const Token& other)
+	{
+		m_type = other.m_type;
+		m_start_pos = other.m_start_pos;
+		m_str = other.m_str;
+		m_value = other.m_value;
+		return *this;
+	}
+
 	std::string_view& view() { return m_str; }
 	const std::string_view& view() const { return m_str; }
 	TokenType type() const { return m_type; }
