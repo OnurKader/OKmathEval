@@ -5,10 +5,17 @@
 
 namespace OK
 {
-class NumberExpression: public Expression
+class NumberExpression final : public Expression
 {
 	public:
-	NumberExpression();
+	NumberExpression(Token);
+
+	TokenType& type() override { return m_type; }
+	const TokenType& type() const override { return m_type; }
+
+	private:
+	TokenType m_type;
+	Token m_number_token;
 };
 
 }	 // namespace OK

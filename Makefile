@@ -137,6 +137,19 @@ Parser/fast:
 .PHONY : Parser/fast
 
 #=============================================================================
+# Target rules for targets named BinaryExpression
+
+# Build rule for target.
+BinaryExpression: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BinaryExpression
+.PHONY : BinaryExpression
+
+# fast build rule for target.
+BinaryExpression/fast:
+	$(MAKE) -f CMakeFiles/BinaryExpression.dir/build.make CMakeFiles/BinaryExpression.dir/build
+.PHONY : BinaryExpression/fast
+
+#=============================================================================
 # Target rules for targets named NumberExpression
 
 # Build rule for target.
@@ -200,6 +213,33 @@ Expression: cmake_check_build_system
 Expression/fast:
 	$(MAKE) -f CMakeFiles/Expression.dir/build.make CMakeFiles/Expression.dir/build
 .PHONY : Expression/fast
+
+BinaryExpression.o: BinaryExpression.cpp.o
+
+.PHONY : BinaryExpression.o
+
+# target to build an object file
+BinaryExpression.cpp.o:
+	$(MAKE) -f CMakeFiles/BinaryExpression.dir/build.make CMakeFiles/BinaryExpression.dir/BinaryExpression.cpp.o
+.PHONY : BinaryExpression.cpp.o
+
+BinaryExpression.i: BinaryExpression.cpp.i
+
+.PHONY : BinaryExpression.i
+
+# target to preprocess a source file
+BinaryExpression.cpp.i:
+	$(MAKE) -f CMakeFiles/BinaryExpression.dir/build.make CMakeFiles/BinaryExpression.dir/BinaryExpression.cpp.i
+.PHONY : BinaryExpression.cpp.i
+
+BinaryExpression.s: BinaryExpression.cpp.s
+
+.PHONY : BinaryExpression.s
+
+# target to generate assembly for a file
+BinaryExpression.cpp.s:
+	$(MAKE) -f CMakeFiles/BinaryExpression.dir/build.make CMakeFiles/BinaryExpression.dir/BinaryExpression.cpp.s
+.PHONY : BinaryExpression.cpp.s
 
 Expression.o: Expression.cpp.o
 
@@ -400,11 +440,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... MathEval"
 	@echo "... Parser"
+	@echo "... BinaryExpression"
 	@echo "... NumberExpression"
 	@echo "... Token"
 	@echo "... TokenNode"
 	@echo "... Lexer"
 	@echo "... Expression"
+	@echo "... BinaryExpression.o"
+	@echo "... BinaryExpression.i"
+	@echo "... BinaryExpression.s"
 	@echo "... Expression.o"
 	@echo "... Expression.i"
 	@echo "... Expression.s"

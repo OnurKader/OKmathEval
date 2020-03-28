@@ -2,6 +2,7 @@
 #define PARSER_HPP
 
 #include "Lexer.hpp"
+#include "Expression.hpp"
 
 #include <vector>
 
@@ -11,7 +12,7 @@ namespace OK
 class Parser
 {
 	public:
-	Parser(char* str) : m_str(str), m_lexer(str) {}
+	Parser(char*);
 	Parser& parse();
 
 	private:
@@ -22,6 +23,9 @@ class Parser
 
 	Token& peek(size_t);
 	Token& current();
+	Token& nextToken();
+	Expression parsePrimaryExpression();
+	Token match(TokenType);
 };
 
 }	 // namespace OK

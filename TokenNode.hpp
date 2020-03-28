@@ -1,10 +1,43 @@
 #ifndef TOKENNODE_HPP
 #define TOKENNODE_HPP
 
-#include "Token.hpp"
-
 namespace OK
 {
+// TODO Add shift and comparison operators
+enum class TokenType : unsigned char
+{
+	Whitespace,
+	Number,
+	Addition,
+	Subtraction,
+	Multiplication,
+	Division,
+	Modulus,
+	BitwiseAND,
+	BitwiseOR,
+	BitwiseXOR,
+	BitwiseNOT,
+	LogicalAND,
+	LogicalOR,
+	LogicalXOR,
+	LogicalNOT,
+	LeftParens,
+	RightParens,
+	Expr,
+	NumberExpr,
+	BinaryExpr,
+	ParensExpr,
+	EndOfFile,
+	Bad
+};
+
+static constexpr const char* TokenTypeStrings[] = {
+	"Whitespace", "Number",		 "Addition",   "Subtraction", "Multiplication",
+	"Division",	  "Modulus",	 "BitwiseAND", "BitwiseOR",	  "BitwiseXOR",
+	"BitwiseNOT", "LogicalAND",	 "LogicalOR",  "LogicalXOR",  "LogicalNOT",
+	"LeftParens", "RightParens", "Expr",	   "NumberExpr",  "BinaryExpr",
+	"ParensExpr", "EndOfFile",	 "Bad"};
+
 class TokenNode
 {
 	public:

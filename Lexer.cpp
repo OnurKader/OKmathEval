@@ -7,7 +7,7 @@ Lexer::Lexer(char* str) : m_str(str), m_index(0ULL) {}
 Token Lexer::nextToken()
 {
 	if(m_index >= m_str.length())
-		return Token(TokenType::EndOfFile, m_index, "\0", 0UL);
+		return Token(TokenType::EndOfFile, m_index, nullptr, nullptr);
 
 	// Integer check
 	if(std::isdigit(current()))

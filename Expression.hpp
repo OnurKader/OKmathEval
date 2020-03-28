@@ -7,6 +7,9 @@ namespace OK
 {
 class Expression : public TokenNode
 {
+	public:
+	Expression();
+	Expression(TokenType);
 };
 
 }	 // namespace OK

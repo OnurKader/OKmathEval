@@ -3,4 +3,5 @@
 namespace OK
 {
 TokenNode::~TokenNode() {}
+
 }	 // namespace OK
