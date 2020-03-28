@@ -12,6 +12,7 @@ class Lexer
 	const char& current() const { return m_str[m_index]; }
 	size_t moveForward() { return ++m_index; }
 	Token nextToken();
+	const std::string_view& view() const { return m_str; }
 
 	private:
 	std::string_view m_str;

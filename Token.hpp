@@ -4,12 +4,11 @@
 #include <cstring>
 #include <string>
 #include <string_view>
-#include <type_traits>
 #include <variant>
 
 namespace OK
 {
-using primitive_t = std::variant<std::nullptr_t, int64_t, uint64_t, char, double, const char*>;
+using primitive_t = std::variant<std::nullptr_t, int64_t, uint64_t, double>;
 
 // TODO Add shift and comparison operators
 enum class TokenType : uint8_t
@@ -48,10 +47,16 @@ class Token
 	size_t startPos() const { return m_start_pos; }
 
 	template<typename T>
-	T& as();
+	T& as()
+	{
+		return std::get<T>(m_value);
+	}
 
 	template<typename T>
-	const T& as() const;
+	const T& as() const
+	{
+		return std::get<T>(m_value);
+	}
 
 	private:
 	TokenType m_type;

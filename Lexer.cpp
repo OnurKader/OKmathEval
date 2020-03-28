@@ -44,7 +44,12 @@ Token Lexer::nextToken()
 		case '/': return Token(TokenType::Division, m_index++, "/", nullptr);
 		case '(': return Token(TokenType::LeftParens, m_index++, "(", nullptr);
 		case ')': return Token(TokenType::RightParens, m_index++, ")", nullptr);
-		default:  return Token(TokenType::Bad, m_index++, m_str.substr(m_index-1, 1), nullptr);
+		default:
+		{
+			auto t = Token(TokenType::Bad, m_index, m_str.substr(m_index, 1).data(), nullptr);
+			++m_index;
+			return t;
+		}
 	}
 }
 

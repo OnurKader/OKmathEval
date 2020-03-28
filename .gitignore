@@ -80,3 +80,4 @@ dkms.conf
 .*/
 CMakeCache.txt
 MathEval
+CMakeFiles

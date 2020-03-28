@@ -1,4 +1,4 @@
-#include "Token.hpp"
+#include "Lexer.hpp"
 
 #include <iostream>
 
@@ -12,7 +12,7 @@ int main()
 	{
 		// Get rid of the newline at the end of stdin input
 		input_buffer[--read_count] = '\0';
-		OK::Token tok(input_buffer);
+		OK::Lexer tok(input_buffer);
 		std::cout << tok.view() << std::endl;
 	}
 

@@ -1,1 +1,0 @@
-/usr/bin/g++-9  -O2 -g -DNDEBUG  -rdynamic CMakeFiles/MathEval.dir/test.cpp.o  -o MathEval libToken.a libLexer.a 
