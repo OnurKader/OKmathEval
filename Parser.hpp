@@ -7,15 +7,6 @@
 
 namespace OK
 {
-class TokenNode
-{
-	public:
-	TokenType& type() { return m_type; }
-	const TokenType& type() const { return m_type; }
-
-	private:
-	TokenType m_type;
-};
 
 class Parser
 {

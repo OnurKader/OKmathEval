@@ -8,7 +8,7 @@ int main()
 	ssize_t read_count = 0LL;
 	size_t len = 0ULL;
 
-	std::cout << "> ";
+	std::cout << "\033[32;1m\u276F\033[m ";
 
 	while((read_count = getline(&input_buffer, &len, stdin)) != -1)
 	{
@@ -26,7 +26,7 @@ int main()
 			std::cout << OK::TokenTypeStrings[static_cast<int8_t>(tok.type())] << ": " << tok.view()
 					  << std::endl;
 		}
-		std::cout << "\n> ";
+		std::cout << "\033[32;1m\u276F\033[m ";
 	}
 
 	free(input_buffer);

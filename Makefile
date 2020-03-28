@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Lexer
-
-# Build rule for target.
-Lexer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Lexer
-.PHONY : Lexer
-
-# fast build rule for target.
-Lexer/fast:
-	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/build
-.PHONY : Lexer/fast
-
-#=============================================================================
-# Target rules for targets named Token
-
-# Build rule for target.
-Token: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Token
-.PHONY : Token
-
-# fast build rule for target.
-Token/fast:
-	$(MAKE) -f CMakeFiles/Token.dir/build.make CMakeFiles/Token.dir/build
-.PHONY : Token/fast
-
-#=============================================================================
 # Target rules for targets named MathEval
 
 # Build rule for target.
@@ -161,6 +135,98 @@ Parser: cmake_check_build_system
 Parser/fast:
 	$(MAKE) -f CMakeFiles/Parser.dir/build.make CMakeFiles/Parser.dir/build
 .PHONY : Parser/fast
+
+#=============================================================================
+# Target rules for targets named NumberExpression
+
+# Build rule for target.
+NumberExpression: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NumberExpression
+.PHONY : NumberExpression
+
+# fast build rule for target.
+NumberExpression/fast:
+	$(MAKE) -f CMakeFiles/NumberExpression.dir/build.make CMakeFiles/NumberExpression.dir/build
+.PHONY : NumberExpression/fast
+
+#=============================================================================
+# Target rules for targets named Token
+
+# Build rule for target.
+Token: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Token
+.PHONY : Token
+
+# fast build rule for target.
+Token/fast:
+	$(MAKE) -f CMakeFiles/Token.dir/build.make CMakeFiles/Token.dir/build
+.PHONY : Token/fast
+
+#=============================================================================
+# Target rules for targets named TokenNode
+
+# Build rule for target.
+TokenNode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TokenNode
+.PHONY : TokenNode
+
+# fast build rule for target.
+TokenNode/fast:
+	$(MAKE) -f CMakeFiles/TokenNode.dir/build.make CMakeFiles/TokenNode.dir/build
+.PHONY : TokenNode/fast
+
+#=============================================================================
+# Target rules for targets named Lexer
+
+# Build rule for target.
+Lexer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Lexer
+.PHONY : Lexer
+
+# fast build rule for target.
+Lexer/fast:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/build
+.PHONY : Lexer/fast
+
+#=============================================================================
+# Target rules for targets named Expression
+
+# Build rule for target.
+Expression: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Expression
+.PHONY : Expression
+
+# fast build rule for target.
+Expression/fast:
+	$(MAKE) -f CMakeFiles/Expression.dir/build.make CMakeFiles/Expression.dir/build
+.PHONY : Expression/fast
+
+Expression.o: Expression.cpp.o
+
+.PHONY : Expression.o
+
+# target to build an object file
+Expression.cpp.o:
+	$(MAKE) -f CMakeFiles/Expression.dir/build.make CMakeFiles/Expression.dir/Expression.cpp.o
+.PHONY : Expression.cpp.o
+
+Expression.i: Expression.cpp.i
+
+.PHONY : Expression.i
+
+# target to preprocess a source file
+Expression.cpp.i:
+	$(MAKE) -f CMakeFiles/Expression.dir/build.make CMakeFiles/Expression.dir/Expression.cpp.i
+.PHONY : Expression.cpp.i
+
+Expression.s: Expression.cpp.s
+
+.PHONY : Expression.s
+
+# target to generate assembly for a file
+Expression.cpp.s:
+	$(MAKE) -f CMakeFiles/Expression.dir/build.make CMakeFiles/Expression.dir/Expression.cpp.s
+.PHONY : Expression.cpp.s
 
 Lexer.o: Lexer.cpp.o
 
@@ -188,6 +254,33 @@ Lexer.s: Lexer.cpp.s
 Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
+
+NumberExpression.o: NumberExpression.cpp.o
+
+.PHONY : NumberExpression.o
+
+# target to build an object file
+NumberExpression.cpp.o:
+	$(MAKE) -f CMakeFiles/NumberExpression.dir/build.make CMakeFiles/NumberExpression.dir/NumberExpression.cpp.o
+.PHONY : NumberExpression.cpp.o
+
+NumberExpression.i: NumberExpression.cpp.i
+
+.PHONY : NumberExpression.i
+
+# target to preprocess a source file
+NumberExpression.cpp.i:
+	$(MAKE) -f CMakeFiles/NumberExpression.dir/build.make CMakeFiles/NumberExpression.dir/NumberExpression.cpp.i
+.PHONY : NumberExpression.cpp.i
+
+NumberExpression.s: NumberExpression.cpp.s
+
+.PHONY : NumberExpression.s
+
+# target to generate assembly for a file
+NumberExpression.cpp.s:
+	$(MAKE) -f CMakeFiles/NumberExpression.dir/build.make CMakeFiles/NumberExpression.dir/NumberExpression.cpp.s
+.PHONY : NumberExpression.cpp.s
 
 Parser.o: Parser.cpp.o
 
@@ -243,6 +336,33 @@ Token.cpp.s:
 	$(MAKE) -f CMakeFiles/Token.dir/build.make CMakeFiles/Token.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
+TokenNode.o: TokenNode.cpp.o
+
+.PHONY : TokenNode.o
+
+# target to build an object file
+TokenNode.cpp.o:
+	$(MAKE) -f CMakeFiles/TokenNode.dir/build.make CMakeFiles/TokenNode.dir/TokenNode.cpp.o
+.PHONY : TokenNode.cpp.o
+
+TokenNode.i: TokenNode.cpp.i
+
+.PHONY : TokenNode.i
+
+# target to preprocess a source file
+TokenNode.cpp.i:
+	$(MAKE) -f CMakeFiles/TokenNode.dir/build.make CMakeFiles/TokenNode.dir/TokenNode.cpp.i
+.PHONY : TokenNode.cpp.i
+
+TokenNode.s: TokenNode.cpp.s
+
+.PHONY : TokenNode.s
+
+# target to generate assembly for a file
+TokenNode.cpp.s:
+	$(MAKE) -f CMakeFiles/TokenNode.dir/build.make CMakeFiles/TokenNode.dir/TokenNode.cpp.s
+.PHONY : TokenNode.cpp.s
+
 test.o: test.cpp.o
 
 .PHONY : test.o
@@ -277,20 +397,32 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Lexer"
-	@echo "... Token"
-	@echo "... MathEval"
 	@echo "... edit_cache"
+	@echo "... MathEval"
 	@echo "... Parser"
+	@echo "... NumberExpression"
+	@echo "... Token"
+	@echo "... TokenNode"
+	@echo "... Lexer"
+	@echo "... Expression"
+	@echo "... Expression.o"
+	@echo "... Expression.i"
+	@echo "... Expression.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... NumberExpression.o"
+	@echo "... NumberExpression.i"
+	@echo "... NumberExpression.s"
 	@echo "... Parser.o"
 	@echo "... Parser.i"
 	@echo "... Parser.s"
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
+	@echo "... TokenNode.o"
+	@echo "... TokenNode.i"
+	@echo "... TokenNode.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
