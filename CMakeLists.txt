@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(MathEval)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra -Wpedantic -Wshadow")
 add_library(Token Token.hpp Token.cpp)
 add_library(Lexer Lexer.hpp Lexer.cpp)
 add_library(Parser Parser.hpp Parser.cpp)
